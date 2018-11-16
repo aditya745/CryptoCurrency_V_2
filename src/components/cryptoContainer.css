@@ -1,0 +1,101 @@
+.crypto-container {
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    grid-gap: 0.5%;
+    background-color: transparent;
+	padding:2%;
+	width:100%;
+    font-size:1.3vw;
+    margin: 1%
+}
+.crypto-container_cryptos {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 2%;
+    font-size: 1.2vw;
+    text-align: center;
+    width: 80%;
+    margin:2%;
+}
+.icon {
+    width : 10%;
+}
+img{
+    text-align:center
+}
+
+.crypto-header{
+    display:flex;
+    width:100%;
+    justify-content: space-evenly
+}
+.btn1 {
+    background-color: transparent;
+    color: black;
+    border: 2px solid #4CAF50;
+    border-radius:10px;
+}
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: black;
+    padding: 13px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 0;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.btn1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+.btn2{
+	background-color:transparent;
+	color: black;
+    border: 2px solid orange;
+    border-radius: 10px;
+}
+
+.btn2:hover {
+    background-color: orange;
+    color: white;
+}
+
+
+input[type=text] {
+    width: 150px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 30px;
+    transition: width 0.4s ease-in-out;
+    margin-left:2%;
+    margin-bottom: 2%;
+
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .crypto-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .crypto-container_cryptos{
+        font-size: 3.2vw;
+    }
+    .crypto-header{
+        display:flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
