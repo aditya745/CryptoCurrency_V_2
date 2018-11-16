@@ -25,7 +25,8 @@ class CryptoContainer extends Component {
     }
 
     render() {
-        const cryptoValues = (Object.values(this.props.crypto));
+        const { crypto } = this.props
+        const cryptoValues = (Object.values(crypto));
         let allCryptos;
         if (this.state.crypto === "") {
             allCryptos = cryptoValues.map(cryptos => {
@@ -44,8 +45,8 @@ class CryptoContainer extends Component {
             })
         }
         else {
-            console.log(this.props.crypto);
-            const Values = (Object.values(this.props.crypto)).filter(item => item.name.toLowerCase().indexOf(this.state.crypto.toLowerCase()) !== -1)
+            const { crypto } = this.props;
+            const Values = (Object.values(crypto)).filter(item => item.name.toLowerCase().indexOf(this.state.crypto.toLowerCase()) !== -1)
             allCryptos = Values.map(cryptos => {
                 return (
                     <div key={cryptos.id} >
