@@ -3,23 +3,23 @@ import { connect } from 'react-redux';
 import { getCrypto, sortByPrice, sortByRank } from '../store/actions/cryptoActions';
 import './cryptoContainer.css';
 class CryptoContainer extends Component {
-    constructor(props) {
-        super(props)
-        this.state = { crypto: "" }
+
+    state = {
+        crypto: ""
     }
 
     componentDidMount() {
         this.props.getCrypto();
     }
-
+    //Search function
     updateSearch = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
-
+    //Sorting by price in usd
     handleSortByPrice = () => {
         this.props.sortByPrice();
     }
-
+    //sorting by rank
     handleSortByRank = () => {
         this.props.sortByRank();
     }
@@ -34,6 +34,7 @@ class CryptoContainer extends Component {
                         <div className="crypto-container_cryptos">
                             <img src={`https://s2.coinmarketcap.com/static/img/coins/16x16/${cryptos.id}.png`} alt="cryptoImg" className="icon" />
                             <h4>{cryptos.name} ({cryptos.symbol})</h4>
+                            <h4>Rank: {cryptos.rank}</h4>
                             <h4>Price: {cryptos.quotes.USD.price.toFixed(2)}</h4>
                             <h4>Percent_Change_1h:</h4> <h5 style={(cryptos.quotes.USD.percent_change_1h < 1) ? { color: "red" } : { color: "green" }}>{cryptos.quotes.USD.percent_change_1h}</h5>
                             <h4>Percent_Change_24h:</h4> <h5 style={(cryptos.quotes.USD.percent_change_24h < 1) ? { color: "red" } : { color: "green" }}>{cryptos.quotes.USD.percent_change_24h}</h5>
@@ -51,9 +52,10 @@ class CryptoContainer extends Component {
                         <div className="crypto-container_cryptos">
                             <img src={`https://s2.coinmarketcap.com/static/img/coins/16x16/${cryptos.id}.png`} alt="cryptoImg" className="icon" />
                             <h4>{cryptos.name} ({cryptos.symbol})</h4>
+                            <h4>Rank: {cryptos.rank}</h4>
                             <h4>Price: {cryptos.quotes.USD.price.toFixed(2)}</h4>
-                            <h4>Percent_Change_1h:</h4> <h5>{cryptos.quotes.USD.percent_change_1h}</h5>
-                            <h4>Percent_Change_24h:</h4> <h5>{cryptos.quotes.USD.percent_change_24h}</h5>
+                            <h4>Percent_Change_1h:</h4> <h5 style={(cryptos.quotes.USD.percent_change_1h < 1) ? { color: "red" } : { color: "green" }}>{cryptos.quotes.USD.percent_change_1h}</h5>
+                            <h4>Percent_Change_24h:</h4> <h5 style={(cryptos.quotes.USD.percent_change_24h < 1) ? { color: "red" } : { color: "green" }}>{cryptos.quotes.USD.percent_change_24h}</h5>
                         </div>
                     </div>
                 )

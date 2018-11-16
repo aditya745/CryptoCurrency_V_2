@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className ="app-header">
+        <div className="app-header">
           <h2>CryptoCurrency</h2>
         </div>
         <CryptoContainer />
